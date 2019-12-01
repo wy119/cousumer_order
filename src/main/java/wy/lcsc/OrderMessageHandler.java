@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class OrderMessageHandler {
 
-    // 不是很清晰。。。
+    // 不是很清晰。。。什么时候按什么规则取数据，topic已经在处理，新来的同topic的消息应该如何？
 
     // 从数据库查n条消息，按topic 分组，按业务发起时间排序
     private static Map<Integer,List<Transfer>> getOrderTransfer(){
