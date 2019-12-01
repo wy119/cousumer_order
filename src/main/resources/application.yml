@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: cousumer-order
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/ # 配置eureka服务地址,可以配置到集群上（多个），就算不配多个也会互相复制，就怕它配的那个刚好挂了。
+  instance:
+    prefer-ip-address: true # 将自己的ip注册到eureka服务
+
