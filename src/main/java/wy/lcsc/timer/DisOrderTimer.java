@@ -16,7 +16,7 @@ public class DisOrderTimer {
 
             DataVO dataVO=this.packageDataVO(transfer);
 
-            DisOrderMessageHandler.transfer(dataVO);
+            DisOrderMessageHandler.reTransferDisOrder(dataVO);
         }
 
     }

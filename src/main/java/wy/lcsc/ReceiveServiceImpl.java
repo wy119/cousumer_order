@@ -17,9 +17,10 @@ public class ReceiveServiceImpl implements ReceiveService{
         // 无序消息
         if (null==dataVO.getTopicId()){
 
-            DisOrderMessageHandler.transfer(dataVO);
+            DisOrderMessageHandler.transferDisOrder(dataVO);
         }else {
 
+            // 有序消息
         }
 
         return SystemConstant.SUCCESS;
@@ -32,6 +33,6 @@ public class ReceiveServiceImpl implements ReceiveService{
 
        // 排序ID若为null给-1
 
-       // 插入
+       // 插入，返回主键，发送给对方rocket后，要用这个id来更新发送状态。
    }
 }

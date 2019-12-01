@@ -21,7 +21,7 @@ public class DisOrderMessageHandler {
      * 发送数据到对方rocket
      * @param dataVO
      */
-    public static void transfer(DataVO dataVO){
+    public static void transferDisOrder(DataVO dataVO){
       Object result=  sent(dataVO);
 
       if (result.toString().equals("success")){
@@ -38,9 +38,17 @@ public class DisOrderMessageHandler {
      * 发送数据到对方rocket
      * @param dataVO
      */
-    public static void reTransfer(DataVO dataVO){
+    public static void reTransferDisOrder(DataVO dataVO){
 
-        // 更新为fail，重试次数0
+        Object result=  sent(dataVO);
+
+        if (result.toString().equals("success")){
+
+            // 更新transfer数据为 done
+            return;
+        }
+
+        // 更新为fail，重试次数+1
 
     }
 
